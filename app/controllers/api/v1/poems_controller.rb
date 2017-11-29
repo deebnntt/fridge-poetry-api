@@ -19,6 +19,13 @@ class Api::V1::PoemsController < ApplicationController
     render json: @poem
   end
 
+  def update
+    @poem = Poem.find(params[:id])
+    @poem.update(title: update_poem_params[:title])
+
+    render json: @poem
+  end
+
   def show
     @poem = Poem.find(params[:id])
 
@@ -29,6 +36,10 @@ class Api::V1::PoemsController < ApplicationController
 
   def poem_params
     params.require(:poem).permit(magnet: [:text, :x, :y])
+  end
+
+  def update_poem_params
+    params.permit(:title)
   end
 
 end
