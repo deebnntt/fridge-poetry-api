@@ -19,6 +19,12 @@ class Api::V1::PoemsController < ApplicationController
     render json: @poem
   end
 
+  def show
+    @poem = Poem.find(params[:id])
+
+    render json: @poem
+  end
+
   private
 
   def poem_params
