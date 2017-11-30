@@ -21,7 +21,8 @@ class Api::V1::PoemsController < ApplicationController
 
   def update
     @poem = Poem.find(params[:id])
-    @poem.update(title: update_poem_params[:title])
+    @poem.title = update_poem_params[:title]
+    @poem.save
 
     render json: @poem
   end
