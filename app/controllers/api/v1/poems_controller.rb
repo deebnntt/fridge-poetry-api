@@ -21,7 +21,13 @@ class Api::V1::PoemsController < ApplicationController
 
   def update
     @poem = Poem.find(params[:id])
-    @poem.title = update_poem_params[:title]
+
+    if update_poem_params[:title]
+      @poem.title = update_poem_params[:title]
+    elsif update_poem_params[:color]
+      @poem.color = update_poem_params[:color]
+    end
+
     @poem.save
 
     render json: @poem
@@ -40,7 +46,7 @@ class Api::V1::PoemsController < ApplicationController
   end
 
   def update_poem_params
-    params.permit(:title)
+    params.permit(:title, :color)
   end
 
 end
