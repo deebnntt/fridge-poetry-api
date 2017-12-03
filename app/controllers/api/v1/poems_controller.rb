@@ -39,6 +39,11 @@ class Api::V1::PoemsController < ApplicationController
     render json: @poem
   end
 
+  def destroy
+    @poem = Poem.find(params[:id])
+    @poem.destroy
+  end
+
   private
 
   def poem_params
