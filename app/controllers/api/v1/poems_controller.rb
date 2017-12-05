@@ -6,7 +6,7 @@ class Api::V1::PoemsController < ApplicationController
   end
 
   def create
-    @poem = Poem.new
+    @poem = Poem.create(user_id: poem_params[:user_id])
 
     poem_params[:magnet].each do |w|
       @magnet = Magnet.new(w)
@@ -47,7 +47,7 @@ class Api::V1::PoemsController < ApplicationController
   private
 
   def poem_params
-    params.require(:poem).permit(magnet: [:text, :x, :y])
+    params.require(:poem).permit(:user_id, magnet: [:text, :x, :y])
   end
 
   def update_poem_params
