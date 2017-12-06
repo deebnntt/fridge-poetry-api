@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :magnets, only: [:create]
     resources :tags, only: [:create]
     resources :users, only: [:index, :show, :create]
+    resources :likes, only: [:index, :create]
   end
 end
 

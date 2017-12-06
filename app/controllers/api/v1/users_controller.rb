@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  def me #send back info on user if they're logged in
+  def me 
     render json: current_user
   end
 

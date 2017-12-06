@@ -5,5 +5,6 @@ class Poem < ApplicationRecord
   has_many :magnets
   has_many :tags, through: :poems
   accepts_nested_attributes_for :magnets
+  has_many :likes
 
 end
