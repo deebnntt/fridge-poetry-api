@@ -1,25 +1,5 @@
-# README
+An interactive drag-and-drop experience where users can create poems from a database of randomized words, save, and share.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# fridge-poetry-api
++ Built frontend with React, using Redux for state management and user authentication (link to front-end repo here - https://github.com/deebnntt/magNET)
++ Backend has User, Word, Magnet, and Like classes
++ Includes Application and Sessions controllers for user auth
